@@ -28,6 +28,8 @@ const db = knex({
 
 app.get("/", (req, res) => res.send("success"));
 
+app.get('/favicon.ico', (req, res) => res.status(204));
+
 app.post("/register", (req, res) => Promise.resolve(handleRegister(req, res, db, bcrypt)));
 
 app.post("/signin", (req, res) => handleSignin(req, res, db, bcrypt));
