@@ -8,6 +8,7 @@ import { handleSignin } from "./routes/signin.js";
 // import { getProfile } from './routes/profile.js';
 import { handleImage } from "./routes/image.js";
 import {handleApiCall} from "./routes/imageUrl.js";
+import pg from 'pg';
 
 dotenv.config();
 const app = express();
@@ -17,7 +18,7 @@ app.use(cors());
 const PORT = process.env.PORT || 5000;
 
 const db = knex({
-  client: "pg",
+  client: pg,
   connection: {
     connectionString: process.env.DATABASE_URL,
     ssl: {
