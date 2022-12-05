@@ -7,7 +7,8 @@ import { handleRegister } from './routes/register.js';
 import { handleSignin } from "./routes/signin.js";
 // import { getProfile } from './routes/profile.js';
 import { handleImage } from "./routes/image.js";
-import {handleApiCall} from "./routes/imageUrl.js"
+import {handleApiCall} from "./routes/imageUrl.js";
+import {Client} from "pg";
 
 dotenv.config();
 const app = express();
@@ -19,10 +20,8 @@ const PORT = process.env.PORT || 5000;
 const db = knex({
   client: "pg",
   connection: {
-    host: "127.0.0.1",
-    user: process.env.POSTGRES_USER,
-    password: process.env.POSTGRES_PASSWORD,
-    database: "face_detection_db",
+    host: process.env.DATABASE_URL,
+    ssl:true
   },
 });
 
