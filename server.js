@@ -8,7 +8,6 @@ import { handleSignin } from "./routes/signin.js";
 // import { getProfile } from './routes/profile.js';
 import { handleImage } from "./routes/image.js";
 import {handleApiCall} from "./routes/imageUrl.js";
-import {Client} from "pg";
 
 dotenv.config();
 const app = express();
