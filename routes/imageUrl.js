@@ -15,6 +15,8 @@ export const handleApiCall = (req, res) => {
     .catch((err) => res.status(400).json("unable to work with api"));
 };
 
+//how to do with google rpc
+
 // import { ClarifaiStub, grpc } from "clarifai-nodejs-grpc";
 // const stub = ClarifaiStub.grpc();
 // const metadata = new grpc.Metadata();
